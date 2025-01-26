@@ -26,3 +26,8 @@
 	* Sospechoso restante: THE POSTMAN.
 	* Posibles armas Leather Gloves/Brass Bell.
 5. Se descarta Leather Gloves como arma ya que parecen menos probables como arma.
+
+**Conclusiones**
+* Lugar: Market en shops
+* Arma: Brass Bell (ya que las Leather Gloves parecen menos probables como arma letal).
+* Culpable: The Postman (el único sospechoso que no ha sido descartado).
