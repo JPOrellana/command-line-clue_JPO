@@ -1,0 +1,597 @@
+Microsoft Windows [Versión 10.0.22631.4751]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Users\bauti>wsl
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+jporellana@KARYN:/mnt/c/Users/bauti$ ls ~/.ssh
+ls: cannot access '/home/jporellana/.ssh': No such file or directory
+jporellana@KARYN:/mnt/c/Users/bauti$ ssh-keygen -t rsa -b 4096 -C "orellanaorellanapablo@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/jporellana/.ssh/id_rsa):
+Created directory '/home/jporellana/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/jporellana/.ssh/id_rsa
+Your public key has been saved in /home/jporellana/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:ZeuUyY1Jw/ZWDJaZXV4c5REUxvV/K335XuckK73h4bA orellanaorellanapablo@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|            o=oX@|
+|         . .+oo+=|
+|          B   o +|
+|         * X .  .|
+|        S O +   o|
+|         o .  . +|
+|          . .o++=|
+|            .=oB=|
+|            E.=o+|
++----[SHA256]-----+
+jporellana@KARYN:/mnt/c/Users/bauti$ ls ~/.ssh
+id_rsa  id_rsa.pub
+jporellana@KARYN:/mnt/c/Users/bauti$ eval "$(ssh-agent -s)"
+Agent pid 733
+jporellana@KARYN:/mnt/c/Users/bauti$ ssh-add ~/.ssh/id_rsa
+Enter passphrase for /home/jporellana/.ssh/id_rsa:
+Identity added: /home/jporellana/.ssh/id_rsa (orellanaorellanapablo@gmail.com)
+jporellana@KARYN:/mnt/c/Users/bauti$ cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCqLDiCYFLzGLbgTpyz95etzaaCTuWba23ZLTIcvCbvpPeHxAIpid50qc8YsZevs8L0KtkjhjsVIrpQTXdOUQCKrKH4YemjDNg5J6CNr4qVuUDqR9y65vCNUOSrgXUL5cSalTu3E/uhj2Ye0/ET9R5gvU8SIjDgzvl0mwsL2Tu2/G3O5fhsOwf7ymNHMWDFWCvMb6ekAbzF8w/wDT7dtBlx2gO4JZeSJRSYQ+wOu4UaAgiP5WULi3BjMdRwKvijCmR7abyiUqQinDhL55kCiQ1w1hGJwcQqR9pizp86fX0adslTMN3Tkhiz7eXdtS5HKCjFHJfMGN16yaxe1zqiJ3wvYjUOkn2IdSHLz3wnb77yTRc8P/dbEPDvnU1ksYEWYGzU6XfkdQ75t6TTqk+cApEkNHgI/Hz5ROzWrDOGROxv2bGYRMhoCGgW8XN07JKO8PnguFW3EcUk72ITC88ep4lCpmBgit4mCjkK4+ILsD0KTqBlj5TcYCBNmw11QBeOmbH91Sr4Jp5CbafCUYs1Szo1k0B6lSoaXQeCvSepRBIsj6MkDlsJZ2PTlYm0NIz2BQzITtz3Y73Z7u/zzYJyv1jvIMH+4OOpORgzxPeTCESdHMEQbNffYiDHidsdadOTwYT9vGt0sNJ+hkkuJoWA/7Qzy+wgVMwXthCzPGRXUQhsxQ== orellanaorellanapablo@gmail.com
+jporellana@KARYN:/mnt/c/Users/bauti$ ssh -T git@github.com
+The authenticity of host 'github.com (140.82.112.4)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Hi JPOrellana! You've successfully authenticated, but GitHub does not provide shell access.
+jporellana@KARYN:/mnt/c/Users/bauti$ mkdir ~/proyectos
+jporellana@KARYN:/mnt/c/Users/bauti$ cd ~/proyectos
+jporellana@KARYN:~/proyectos$ git clone git@github.com:JPOrellana/command-line-clue_JPO.git
+Cloning into 'command-line-clue_JPO'...
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 8 (delta 2), reused 2 (delta 2), pack-reused 4 (from 1)
+Receiving objects: 100% (8/8), 8.80 KiB | 2.93 MiB/s, done.
+Resolving deltas: 100% (2/2), done.
+jporellana@KARYN:~/proyectos$ ls
+command-line-clue_JPO
+jporellana@KARYN:~/proyectos$ cd ~/proyectos/command-line-clue_JPO/
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ ls
+README.md  clue.py
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ cat README.md
+# Mystery in the Small Town: A Command Line Investigation Game
+
+Welcome, Detective! A crime has occurred in our small town, and we need your command line investigation skills to solve it. You'll explore different locations, gather clues, and use your powers of deduction to find the culprit.
+
+## The Crime
+
+A crime has been committed in our quiet town. The police have narrowed down the list of suspects and potential weapons, but they need your help to identify the perpetrator and the murder weapon. The crime must have taken place in an empty room, as no one in town witnessed the act.
+
+## How to Investigate
+
+### Using the Detective's Notebook
+
+When you start the game, you'll find a `notebook.md` file in your game directory. This notebook contains:
+- A list of possible suspects
+- A list of potential weapons
+
+As you investigate, you'll cross out suspects and weapons that you find in various locations. The logic is simple: if you find a person or object in a room, they couldn't have been involved in the crime at that time! For example, if you find "The Librarian" in the library, you can cross them off your suspect list.
+
+In your notebook, cross out each eliminated suspect and weapon by changing:
+```markdown
+- [ ] The Librarian
+```
+to:
+```markdown
+- [x] The Librarian
+```
+
+The last uncrossed suspect and weapon will be your solution!
+
+### Navigating the Town
+
+To move around town and gather evidence, you'll use these simple commands:
+
+1. List what's in your current location:
+```bash
+ls
+```
+
+2. Move to a new location:
+```bash
+cd library
+```
+
+3. Read the contents of a file:
+```bash
+cat persons.txt
+cat objects.txt
+```
+
+For example, let's say you're investigating the library:
+```bash
+cd library
+ls              # Shows: objects.txt  persons.txt
+cat persons.txt # Might show: "The Teacher"
+```
+If you find The Teacher here, you can cross them off your suspect list!
+
+### Following the Investigation Trail
+
+To make your investigation easier, we've set up a trail of clues! In many locations, you'll find a `clue.txt` file pointing you toward your next destination. Read these clues using:
+```bash
+cat clue.txt
+```
+
+The clues will help you navigate through town. Sometimes you'll need to:
+- Go into a building or room: `cd mansion`
+- Go back up one level: `cd ..`
+- Go back multiple levels: `cd ../..`
+- Move to a parallel room: `cd ../kitchen`
+
+For example, if a clue says "You notice movement in the garden", you might need to:
+```bash
+cd garden      # Enter the garden
+ls             # Check what's here
+cat clue.txt   # Read the next clue
+```
+
+## Tips for Success
+- Always check both `persons.txt` and `objects.txt` in each location
+- Update your notebook regularly as you find suspects and weapons
+- Follow the trail of clues to ensure you don't miss any locations
+- Remember that the crime happened in an empty room
+- Keep track of which suspects and weapons you've crossed off
+
+Happy investigating, Detective! The town is counting on you to solve this mystery!
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ python3 clue.py
+Your mystery game has been generated!
+use `cd game` and begin investigating.
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ ls
+README.md  clue.py  game
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ git add .
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ git commit -m "Feature: Se genera carpeta inicial del juego Clue"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <jporellana@KARYN.>) not allowed
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ git config --global user.name "Pablo"
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ git config --global user.email "orellanaorellanapablo@gmail.com"
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ git config --list
+user.name=Pablo
+user.email=orellanaorellanapablo@gmail.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=git@github.com:JPOrellana/command-line-clue_JPO.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.main.remote=origin
+branch.main.merge=refs/heads/main
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ git commit -m "Feature: Se genera carpeta inicial del juego Clue"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ git log --oneline
+792b8b8 (HEAD -> main, origin/main, origin/HEAD) chore: change the number of suspects from 2 to 3
+905287b Initial commit
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ cat .gitignore
+game
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ nano .gitignore
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ git add -f game
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ git commit -m "Feature: Se genera carpeta inicial del juego Clue"
+[main ef1fc7e] Feature: Se genera carpeta inicial del juego Clue
+ 79 files changed, 89 insertions(+)
+ create mode 100644 game/clue.txt
+ create mode 100644 game/houses/cottage/cellar/objects.txt
+ create mode 100644 game/houses/cottage/cellar/persons.txt
+ create mode 100644 game/houses/cottage/living room/objects.txt
+ create mode 100644 game/houses/cottage/living room/persons.txt
+ create mode 100644 game/houses/cottage/objects.txt
+ create mode 100644 game/houses/cottage/persons.txt
+ create mode 100644 game/houses/mansion/garden/greenhouse/objects.txt
+ create mode 100644 game/houses/mansion/garden/greenhouse/persons.txt
+ create mode 100644 game/houses/mansion/garden/objects.txt
+ create mode 100644 game/houses/mansion/garden/persons.txt
+ create mode 100644 game/houses/mansion/library/objects.txt
+ create mode 100644 game/houses/mansion/library/persons.txt
+ create mode 100644 game/houses/mansion/library/study/clue.txt
+ create mode 100644 game/houses/mansion/library/study/objects.txt
+ create mode 100644 game/houses/mansion/library/study/persons.txt
+ create mode 100644 game/houses/mansion/objects.txt
+ create mode 100644 game/houses/mansion/persons.txt
+ create mode 100644 game/houses/objects.txt
+ create mode 100644 game/houses/persons.txt
+ create mode 100644 game/notebook.md
+ create mode 100644 game/park/gazebo/objects.txt
+ create mode 100644 game/park/gazebo/persons.txt
+ create mode 100644 game/park/objects.txt
+ create mode 100644 game/park/persons.txt
+ create mode 100644 game/park/playground/objects.txt
+ create mode 100644 game/park/playground/persons.txt
+ create mode 100644 game/park/playground/sandbox/objects.txt
+ create mode 100644 game/park/playground/sandbox/persons.txt
+ create mode 100644 game/park/pond/dock/objects.txt
+ create mode 100644 game/park/pond/dock/persons.txt
+ create mode 100644 game/park/pond/objects.txt
+ create mode 100644 game/park/pond/persons.txt
+ create mode 100644 game/school/cafeteria/kitchen/objects.txt
+ create mode 100644 game/school/cafeteria/kitchen/persons.txt
+ create mode 100644 game/school/cafeteria/objects.txt
+ create mode 100644 game/school/cafeteria/persons.txt
+ create mode 100644 game/school/classrooms/art room/objects.txt
+ create mode 100644 game/school/classrooms/art room/persons.txt
+ create mode 100644 game/school/classrooms/objects.txt
+ create mode 100644 game/school/classrooms/persons.txt
+ create mode 100644 game/school/classrooms/science lab/objects.txt
+ create mode 100644 game/school/classrooms/science lab/persons.txt
+ create mode 100644 game/school/gymnasium/objects.txt
+ create mode 100644 game/school/gymnasium/persons.txt
+ create mode 100644 game/school/objects.txt
+ create mode 100644 game/school/persons.txt
+ create mode 100644 game/shops/bakery/kitchen/objects.txt
+ create mode 100644 game/shops/bakery/kitchen/persons.txt
+ create mode 100644 game/shops/bakery/objects.txt
+ create mode 100644 game/shops/bakery/persons.txt
+ create mode 100644 game/shops/bakery/storage/objects.txt
+ create mode 100644 game/shops/bakery/storage/persons.txt
+ create mode 100644 game/shops/cafe/objects.txt
+ create mode 100644 game/shops/cafe/persons.txt
+ create mode 100644 game/shops/market/aisles/objects.txt
+ create mode 100644 game/shops/market/aisles/persons.txt
+ create mode 100644 game/shops/market/clue.txt
+ create mode 100644 game/shops/market/objects.txt
+ create mode 100644 game/shops/market/persons.txt
+ create mode 100644 game/shops/market/stockroom/objects.txt
+ create mode 100644 game/shops/market/stockroom/persons.txt
+ create mode 100644 game/shops/objects.txt
+ create mode 100644 game/shops/persons.txt
+ create mode 100644 game/town hall/clue.txt
+ create mode 100644 game/town hall/objects.txt
+ create mode 100644 game/town hall/offices/meeting rooms/council chamber/clue.txt
+ create mode 100644 game/town hall/offices/meeting rooms/council chamber/objects.txt
+ create mode 100644 game/town hall/offices/meeting rooms/council chamber/persons.txt
+ create mode 100644 game/town hall/offices/meeting rooms/objects.txt
+ create mode 100644 game/town hall/offices/meeting rooms/persons.txt
+ create mode 100644 game/town hall/offices/objects.txt
+ create mode 100644 game/town hall/offices/persons.txt
+ create mode 100644 game/town hall/offices/records/archives/objects.txt
+ create mode 100644 game/town hall/offices/records/archives/persons.txt
+ create mode 100644 game/town hall/offices/records/clue.txt
+ create mode 100644 game/town hall/offices/records/objects.txt
+ create mode 100644 game/town hall/offices/records/persons.txt
+ create mode 100644 game/town hall/persons.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ git push
+Enumerating objects: 58, done.
+Counting objects: 100% (58/58), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (39/39), done.
+Writing objects: 100% (57/57), 5.06 KiB | 1.26 MiB/s, done.
+Total 57 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), completed with 1 local object.
+To github.com:JPOrellana/command-line-clue_JPO.git
+   792b8b8..ef1fc7e  main -> main
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ cd game
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ ls
+ clue.txt   houses   notebook.md   park   school   shops  'town hall'
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ cat notebook.md
+# Detective's Notebook
+
+## Suspects
+- [ ] The Carpenter
+- [ ] The Police Officer
+- [ ] The Postman
+
+## Weapons
+- [ ] Leather Gloves
+- [ ] Crystal Vase
+- [ ] Brass Bell
+
+## Notes
+*Use this space to record your findings and deductions...*
+
+Location of the crime is still unknown - the room must have been empty when it happened...
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ cat clue.txt
+Detective's Initial Report:
+
+ the study.
+
+This seems like a good place to start our investigation. Remember to:
+- Use 'cd' to move between locations
+- Use 'ls' to list the contents of each location
+- Use 'cat' to read any text files you find
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ cd houses/mansion/library/study
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/houses/mansion/library/study$ ls
+clue.txt  objects.txt  persons.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/houses/mansion/library/study$ cat clue.txt
+New Clue:
+
+Maybe we should check back in the town hall.
+
+Hint: You'll need to go back several directories to reach this location.
+Remember that you can use multiple '../' to go up multiple levels:
+- 'cd ..'    goes up one level
+- 'cd ../..' goes up two levels
+- and so on...
+
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/houses/mansion/library/study$ cat objects.txt
+Crystal Vase
+Paint Brush
+Magnifying Glassjporellana@KARYN:~/proyectos/command-line-clue_JPO/game/houses/mansion/library/study$ cat persons.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/houses/mansion/library/study$ nano ../../../../notebook.md
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/houses/mansion/library/study$ nano ../../../../notebook.md
+
+
+
+
+
+
+
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/houses/mansion/library/study$ git add notebook.md
+fatal: pathspec 'notebook.md' did not match any files
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/houses/mansion/library/study$ cd ../../../../
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ git add notebook.md
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ git commit -m "Descarte del Crystal Vase como arma"
+[main ce8239f] Descarte del Crystal Vase como arma
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 508 bytes | 508.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To github.com:JPOrellana/command-line-clue_JPO.git
+   ef1fc7e..ce8239f  main -> main
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ cd town\ hall
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall$ ls
+clue.txt  objects.txt  offices  persons.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall$ cat clue.txt
+Investigation Update:
+
+A security guard mentions hearing noises coming from the offices.
+
+Remember: Use 'cd "offices"' to follow this lead.
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall$ cat objects.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall$ cat persons.txtat persons.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall$ cd offices
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices$ ls
+'meeting rooms'   objects.txt   persons.txt   records
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices$ cat objects.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices$ cat persons.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices$ cd
+meeting rooms/ records/
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices$ cd
+meeting rooms/ records/
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices$ cd meeting\ rooms/
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices/meeting rooms$ ls
+'council chamber'   objects.txt   persons.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices/meeting rooms$ cat objects.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices/meeting rooms$ cat persons.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices/meeting rooms$ cd council\ chamber
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices/meeting rooms/council chamber$ ls
+clue.txt  objects.txt  persons.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices/meeting rooms/council chamber$ cat clue.txt
+New Clue:
+
+Go to the records in the town hall.
+
+Hint: You'll need to go back several directories to reach this location.
+Remember that you can use multiple '../' to go up multiple levels:
+- 'cd ..'    goes up one level
+- 'cd ../..' goes up two levels
+- and so on...
+
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices/meeting rooms/council chamber$ cat objects.txt
+Fountain Penjporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices/meeting rooms/council chamber$ cat persons.txt
+The Carpenterjporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices/meeting rooms/council chamber$ cd ../../../../../
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ cd game/
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ nano notebook.md
+
+
+
+
+
+
+
+
+
+
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ nano notebook.md
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ git add notebook.md
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ git commit -m "Descartar al Carpenter como sospechoso"
+[main 6505769] Descartar al Carpenter como sospechoso
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 871 bytes | 435.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:JPOrellana/command-line-clue_JPO.git
+   ce8239f..6505769  main -> main
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ cd records
+-bash: cd: records: No such file or directory
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ cd
+houses/    park/      school/    shops/     town hall/
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ cd cd "town hall/offices/records"
+-bash: cd: too many arguments
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ cd cd town hall
+/offices/records
+-bash: cd: too many arguments
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ cd town hall/of
+fices/records
+-bash: cd: too many arguments
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ cd
+houses/    park/      school/    shops/     town hall/
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ cd town\ hall/o
+ffices/records/
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices/records$ ls
+archives  clue.txt  objects.txt  persons.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices/records$ cat clue.txt
+New Clue:
+
+Check the market in the shops.
+
+Hint: You'll need to go back several directories to reach this location.
+Remember that you can use multiple '../' to go up multiple levels:
+- 'cd ..'    goes up one level
+- 'cd ../..' goes up two levels
+- and so on...
+
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices/records$ cat objects.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices/records$ cat persons.txt
+The Police Officerjporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices/records$ cd archives/
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices/records/archives$ ls
+objects.txt  persons.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices/records/archives$ cat objects.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices/records/archives$ cat
+objects.txt  persons.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices/records/archives$ cat persons.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices/records/archives$ cd ../../../../../shops/market
+-bash: cd: ../../../../../shops/market: No such file or directory
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/town hall/offices/records/archives$ cd ../../../../../
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ cd  game/
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ cd
+houses/    park/      school/    shops/     town hall/
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ cd shops/market/
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/shops/market$ ls
+aisles  clue.txt  objects.txt  persons.txt  stockroom
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/shops/market$ ca
+t clue.txt
+Investigation Conclusion:
+
+Your investigation has led you to the truth - this empty room is where it all happened!
+
+Your careful detective work has paid off. The empty state of this room matches
+witness accounts - no one was around when the crime occurred. This must be
+where the murderer carried out their plan!
+
+Make sure to document this discovery in your notebook.md file along with your
+other findings about the weapon and suspect.jporellana@KARYN:~/proyect
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/shops/market$ ca
+t objects.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/shops/market$ ca
+t persons.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/shops/market$ cd aisles/
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/shops/market/aisles$ ls
+objects.txt  persons.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/shops/market/aisles$ cat objects.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/shops/market/aisles$ cat person.txt
+cat: person.txt: No such file or directory
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/shops/market/aisles$ cat persons.txt
+The Clockmakerjporellana@KARYN:~/proyectos/command-line-clue_JPO/game/shops/market/aisles$ cs ../
+cs: command not found
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/shops/market/aisles$ cd ../
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/shops/market$ cd stockroom/
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/shops/market/stockroom$ ls
+objects.txt  persons.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/shops/market/stockroom$ cat object.txt
+cat: object.txt: No such file or directory
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/shops/market/stockroom$ cat objects.txt
+Steel Rulerjporellana@KARYN:~/proyectos/command-line-clue_JPO/game/shops/market/stockroom$ cat persons.txt
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game/shops/market/stockroom$ cd ../../../../../../
+jporellana@KARYN:~$ cd
+.cache/    .local/    .ssh/      proyectos/
+jporellana@KARYN:~$ cd proyectos/
+jporellana@KARYN:~/proyectos$ cd command-line-clue_JPO/
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ cd game/
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ nano notebook.md
+
+
+
+
+
+
+
+
+
+
+
+
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ git add notebook.md
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ git commit -m "Información encontrada en records/archives y market"
+[main 73789a1] Información encontrada en records/archives y market
+ 1 file changed, 5 insertions(+)
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 538 bytes | 538.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To github.com:JPOrellana/command-line-clue_JPO.git
+   6505769..73789a1  main -> main
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ nano notebook.md
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ git add notebook.md
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ git commit -m "Observaciones finales"
+[main 0dedc9e] Observaciones finales
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 438 bytes | 438.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To github.com:JPOrellana/command-line-clue_JPO.git
+   73789a1..0dedc9e  main -> main
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ nano notebook.md
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ git add notebook.md
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ git commit -m "Conclusiones"
+[main b045664] Conclusiones
+ 1 file changed, 5 insertions(+)
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 499 bytes | 499.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To github.com:JPOrellana/command-line-clue_JPO.git
+   0dedc9e..b045664  main -> main
+jporellana@KARYN:~/proyectos/command-line-clue_JPO/game$ cd ../
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ nano README.md
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ git add README.md
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ git commit -m "Modificar README.md"
+[main 0042fe4] Modificar README.md
+ 1 file changed, 5 insertions(+), 84 deletions(-)
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 492 bytes | 492.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:JPOrellana/command-line-clue_JPO.git
+   b045664..0042fe4  main -> main
+jporellana@KARYN:~/proyectos/command-line-clue_JPO$
