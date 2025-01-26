@@ -2,11 +2,11 @@
 
 ## Suspects
 - [X] The Carpenter
-- [ ] The Police Officer
+- [X] The Police Officer
 - [ ] The Postman
 
 ## Weapons
-- [ ] Leather Gloves
+- [X] Leather Gloves
 - [X] Crystal Vase
 - [ ] Brass Bell
 
@@ -25,4 +25,4 @@
 	* The Police Officer: Encontrado en los records.
 	* Sospechoso restante: THE POSTMAN.
 	* Posibles armas Leather Gloves/Brass Bell.
-
+5. Se descarta Leather Gloves como arma ya que parecen menos probables como arma.
