@@ -21,3 +21,8 @@
 	* En objects.txt, se encontró un Fountain Pen, entonces aún no se puede descartar como arma.
 	* En persons.txt, se encontró al Carpenter, entonces The Carpenter puede ser descartado como sospechoso, porque estaba presente aquí.
 3. En base a lo mencionado anteriormente podemos decir que el carpenter estaba presente en council chamber entonces NO puede ser culpable.
+4. Se realizó expliración en records/archives y en market
+	* The Police Officer: Encontrado en los records.
+	* Sospechoso restante: THE POSTMAN.
+	* Posibles armas Leather Gloves/Brass Bell.
+
